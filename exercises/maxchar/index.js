@@ -6,26 +6,29 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-  const charMap = {};
-  let max = 0;
-  let maxChar = ''
+  let counter = {};
 
-  for (let char of str) {
-    if (!charMap[char]) {
-      charMap[char] = 1;
-    } else {
-      charMap[char]++;
-    }
+  for (i = 0; i < str.length; i++) {
+     if (!counter[str[i]]) {
+       counter[str[i]] = 1;
+     } else {
+       counter[str[i]]++;
+     }
   }
 
-  for (let char in charMap) {
-    if (charMap[char] > max) {
-      max = charMap[char];
-      maxChar = char;
-    }
-  }
+  let most_rep = 0;
+  let num = 0;
 
-  return maxChar;
+  Object.keys(counter).forEach(function (key) { 
+    var value = counter[key]
+
+    if (value > most_rep) {
+      most_rep = value
+      num = key;
+    }
+  })
+
+  return num;
 }
 
 module.exports = maxChar;
