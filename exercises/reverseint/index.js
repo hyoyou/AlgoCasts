@@ -10,8 +10,8 @@
 
 function reverseInt(n) {
   let stringN = n.toString().split('').reverse().join('')
-
-  return Math.sign(n) * parseInt(stringN);   
+  
+  return Math.sign(n) * parseInt(stringN);
 }
 
 module.exports = reverseInt;
