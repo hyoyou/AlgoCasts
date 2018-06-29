@@ -7,8 +7,11 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
-  return str.split('').reduce((reversed, character) => character + reversed, '');
+  // debugger;
+  return str.split('').reduce((reversed, character) => character + reversed);
 }
+
+// reverse('asdf');
 
 module.exports = reverse;
 
